@@ -1308,4 +1308,124 @@ public String userDelete()&#123;
 <h4 id="4-返回值处理器"><a href="#4-返回值处理器" class="headerlink" title="4.返回值处理器"></a>4.返回值处理器</h4><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210205224147.png"></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>nginx</title>
+    <url>/2021/02/20/nginx/</url>
+    <content><![CDATA[<h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><h2 id="1-什么是nginx"><a href="#1-什么是nginx" class="headerlink" title="1.什么是nginx"></a>1.什么是nginx</h2><p><strong>nginx是高性能的HTTP和反向代理服务器,处理高并发能力是十分强大的,能经受高负载的考验,有报告表示支持高达50000个并发连接数</strong></p>
+<h2 id="2-正向代理"><a href="#2-正向代理" class="headerlink" title="2.正向代理"></a>2.正向代理</h2><p><strong>需要再客户端配置代理服务器进行指定网站访问</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220162156.png"></p>
+<h2 id="3-反向代理"><a href="#3-反向代理" class="headerlink" title="3.反向代理"></a>3.反向代理</h2><p><strong>暴露的代理服务器地址,隐藏了真实服务器ip地址</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220162505.png"></p>
+<h2 id="4-负载均衡"><a href="#4-负载均衡" class="headerlink" title="4.负载均衡"></a>4.负载均衡</h2><p><strong>增加服务器的数量,然后将请求分发到各个服务器上,将原来请求集中导弹个服务器上的情况为将请求分发到多个服务器上,将负载分发到不同的服务器,也就是我们所说的负载均衡</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220162836.png"></p>
+<h2 id="5-动静分离"><a href="#5-动静分离" class="headerlink" title="5.动静分离"></a>5.动静分离</h2><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220162929.png"></p>
+<h1 id="nginx的安装"><a href="#nginx的安装" class="headerlink" title="nginx的安装"></a>nginx的安装</h1><h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><h6 id="1-打开虚拟机-使用远程连接工具-宝塔-Ishell-Mobaxtream-连接linux系统"><a href="#1-打开虚拟机-使用远程连接工具-宝塔-Ishell-Mobaxtream-连接linux系统" class="headerlink" title="1.打开虚拟机,使用远程连接工具(宝塔,Ishell,Mobaxtream..)连接linux系统"></a>1.打开虚拟机,使用远程连接工具(宝塔,Ishell,Mobaxtream..)连接linux系统</h6><h6 id="2-到ngxin官方下载软件"><a href="#2-到ngxin官方下载软件" class="headerlink" title="2.到ngxin官方下载软件"></a>2.到ngxin官方下载软件</h6><p><strong><a href="http://nginx.org/">http://nginx.org/</a></strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220163358.png"></p>
+<h2 id="2-、开始进行-nginx-安装"><a href="#2-、开始进行-nginx-安装" class="headerlink" title="2 、开始进行 nginx 安装"></a>2 、开始进行 nginx 安装</h2><p><strong><font color='red'>建议安装到linux,因为这样才能充分的发挥(原因Linux特有的Io多路复用机制)</font></strong></p>
+<h2 id="1-安装nginx依赖的prce"><a href="#1-安装nginx依赖的prce" class="headerlink" title="1.安装nginx依赖的prce"></a>1.安装nginx依赖的prce</h2><h5 id="第一步-联网下载-pcre-压缩文件依赖"><a href="#第一步-联网下载-pcre-压缩文件依赖" class="headerlink" title="第一步 联网下载 pcre 压缩文件依赖"></a>第一步 联网下载 pcre 压缩文件依赖</h5><h6 id="wget-http-downloads-sourceforge-net-project-pcre-pcre-8-37-pcre-8-37-tar-gz"><a href="#wget-http-downloads-sourceforge-net-project-pcre-pcre-8-37-pcre-8-37-tar-gz" class="headerlink" title="wget http://downloads.sourceforge.net/project/pcre/pcre/8.37/pcre-8.37.tar.gz"></a>wget <a href="http://downloads.sourceforge.net/project/pcre/pcre/8.37/pcre-8.37.tar.gz">http://downloads.sourceforge.net/project/pcre/pcre/8.37/pcre-8.37.tar.gz</a></h6><h5 id="第二步-解压压缩文件"><a href="#第二步-解压压缩文件" class="headerlink" title="第二步 解压压缩文件"></a>第二步 解压压缩文件</h5><p><strong>安装openssl 、zlib 、 gcc依赖 yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel依赖</strong></p>
+<h6 id="使用命令-tar-–xvf-pcre-8-37-tar-gz"><a href="#使用命令-tar-–xvf-pcre-8-37-tar-gz" class="headerlink" title="使用命令 tar –xvf pcre-8.37.tar.gz"></a><strong>使用命令 tar –xvf pcre-8.37.tar.gz</strong></h6><h5 id="第三步-configure-完成后，回到-pcre-目录下执行-make-，最后执行-make-install-pcre-config-–version-查看pcre的版本"><a href="#第三步-configure-完成后，回到-pcre-目录下执行-make-，最后执行-make-install-pcre-config-–version-查看pcre的版本" class="headerlink" title="第三步./configure 完成后，回到 pcre 目录下执行 make ，最后执行 make install,pcre-config –version 查看pcre的版本"></a>第三步./configure 完成后，回到 pcre 目录下执行 make ，最后执行 make install,pcre-config –version 查看pcre的版本</h5><h2 id="2-安装-nginx"><a href="#2-安装-nginx" class="headerlink" title="2.安装 nginx"></a>2.安装 nginx</h2><p><strong>使用命令解压(linux):tar -zxvf  xxx.tar.gz</strong></p>
+<p><strong>./configure</strong></p>
+<p><strong>make &amp;&amp; make install</strong></p>
+<p><strong>进入目录 /usr/local/nginx/sbin/nginx 启动服务</strong></p>
+<h2 id="3-防火墙问题"><a href="#3-防火墙问题" class="headerlink" title="3.防火墙问题"></a>3.防火墙问题</h2><ul>
+<li><p>关闭防火墙 systemctl stop firewalld</p>
+</li>
+<li><p>开发端口号 firewall-cmd –add-port=80/tcp –permanent 记得重启防火墙哦~</p>
+<ul>
+<li>查看端口是否开发:firewall-cmd –list-all</li>
+</ul>
+</li>
+</ul>
+<h1 id="nginx常用的命令"><a href="#nginx常用的命令" class="headerlink" title="nginx常用的命令"></a>nginx常用的命令</h1><p><strong>进入到/usr/local/nginx/sbin目录中nginx的命令才会生效哦</strong></p>
+<ul>
+<li>查看版本 ./nginx -v</li>
+<li>启动nginx ./nginx</li>
+<li>停止nginx ./nginx -s stop</li>
+<li>重载nginx ./nginx -s reload</li>
+</ul>
+<h1 id="nginx的配置文件"><a href="#nginx的配置文件" class="headerlink" title="nginx的配置文件"></a>nginx的配置文件</h1><h4 id="1-位置-usr-local-nginx-conf-nginx-conf"><a href="#1-位置-usr-local-nginx-conf-nginx-conf" class="headerlink" title="1.位置:/usr/local/nginx/conf/nginx.conf"></a><strong>1.位置:/usr/local/nginx/conf/nginx.conf</strong></h4><h4 id="2-配置文件中的内容"><a href="#2-配置文件中的内容" class="headerlink" title="2.配置文件中的内容"></a>2.配置文件中的内容</h4><h5 id="1-全局块：配置服务器整体运行的配置指令比如-worker-processes-1-处理并发数的配置"><a href="#1-全局块：配置服务器整体运行的配置指令比如-worker-processes-1-处理并发数的配置" class="headerlink" title="1.全局块：配置服务器整体运行的配置指令比如 worker_processes 1; 处理并发数的配置"></a>1.全局块：配置服务器整体运行的配置指令比如 worker_processes 1; 处理并发数的配置</h5><h5 id="2-events-块-：影响-Nginx-服务器与用户的网络连接比如-worker-connections-1024-支持的最大连接数为-1024"><a href="#2-events-块-：影响-Nginx-服务器与用户的网络连接比如-worker-connections-1024-支持的最大连接数为-1024" class="headerlink" title="2.events 块 ：影响 Nginx 服务器与用户的网络连接比如 worker_connections 1024; 支持的最大连接数为 1024"></a>2.events 块 ：影响 Nginx 服务器与用户的网络连接比如 worker_connections 1024; 支持的最大连接数为 1024</h5><h5 id="3-http-块-还包含两部分：http-全局块-server-块"><a href="#3-http-块-还包含两部分：http-全局块-server-块" class="headerlink" title="3.http 块:还包含两部分：http 全局块 server 块"></a>3.http 块:还包含两部分：http 全局块 server 块</h5><h1 id="Nginx-配置实例-反向代理-实例-1"><a href="#Nginx-配置实例-反向代理-实例-1" class="headerlink" title="Nginx 配置实例- 反向代理 实例 1"></a>Nginx 配置实例- 反向代理 实例 1</h1><h3 id="1-目的"><a href="#1-目的" class="headerlink" title="1.目的"></a>1.目的</h3><p>​    <strong>打开浏览器,在浏览地址栏输入地址 <a href="http://www.abilities.com,很据./System32/hosts%E6%96%87%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AE%E7%9A%84%E5%9F%9F%E5%90%8D%E6%89%80%E8%A7%A3%E6%9E%90%E7%9A%84Ip,%E8%AE%BF%E9%97%AE%E8%BF%99%E4%B8%AAip">www.abilities.com,很据./System32/hosts文件中配置的域名所解析的Ip,访问这个ip</a></strong></p>
+<h3 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2.准备工作"></a>2.准备工作</h3><p><strong>linux中安装服务tomcat通过 tar -xvf xxx解压,进入到服务的bin目录找到./startup.sh 启动 ,./shutdown.sh 关闭,由于在同局域不同ip中不要忘记<em>对外开发服务哦</em></strong></p>
+<h3 id="3-访问流程"><a href="#3-访问流程" class="headerlink" title="3.访问流程"></a><strong>3.访问流程</strong></h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220224317.png"></p>
+<h3 id="4-具体配置"><a href="#4-具体配置" class="headerlink" title="4.具体配置"></a>4.具体配置</h3><p><strong>第一步 在 在 windows 系统的 host 文件进行域名和 ip 对应关系的配置</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220224727.png"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">192.168.17.128	www.abilities.com</span><br></pre></td></tr></table></figure>
+<p><strong>第二步 在 在 nginx 进行请求转发的配置（反向代理配置）</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220224908.png"></p>
+<h1 id="Nginx-配置实例-反向代理实例-2"><a href="#Nginx-配置实例-反向代理实例-2" class="headerlink" title="Nginx 配置实例- 反向代理实例 2"></a><strong>Nginx 配置实例- 反向代理实例 2</strong></h1><h3 id="1-实现效果"><a href="#1-实现效果" class="headerlink" title="1.实现效果"></a>1.实现效果</h3><p>​    使用nginx反向代理,根据访问的路径跳转到不同端口的服务器,nginx监听的端口为9001;</p>
+<p>​    访问 192.168.17.128:9001/edu/ 直接代理到127.0.0.1:8081</p>
+<p>​    访问 192.168.17.128:9001/vod/ 直接代理到127.0.0.1:8082</p>
+<h3 id="2-准备工作-1"><a href="#2-准备工作-1" class="headerlink" title="2.准备工作"></a>2.准备工作</h3><p>​    准备两个占用端口为8080 8081的tomcat服务器</p>
+<p>​    部署不同的引用避免冲突,明确的区分</p>
+<h3 id="3-具体配置"><a href="#3-具体配置" class="headerlink" title="3.具体配置"></a>3.具体配置</h3><p>​    找到nginx的配置文件,进行反向代理配置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220225455.png"></p>
+<p>​    开发9001 8080 8081端口</p>
+<h3 id="4-test-result"><a href="#4-test-result" class="headerlink" title="4.test result"></a>4.test result</h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220225646.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220225708.png"></p>
+<h1 id="Nginx-配置实例-负载均衡"><a href="#Nginx-配置实例-负载均衡" class="headerlink" title="Nginx 配置实例- 负载均衡"></a>Nginx 配置实例- 负载均衡</h1><h3 id="1-效果"><a href="#1-效果" class="headerlink" title="1.效果"></a>1.效果</h3><p>​    浏览器地址栏输入地址 <a href="http://192.168.17.129/edu/a.html">http://192.168.17.129/edu/a.html</a> ，负载均衡效果，平均 8080和 和 8081 端口中</p>
+<h3 id="2-准备工作-2"><a href="#2-准备工作-2" class="headerlink" title="2.准备工作"></a>2.准备工作</h3><p>​    准备两台 tomcat 服务器，一台 8080 ，一台 8081</p>
+<p>​    在两台 tomcat 里面 webapps 目录中，创建名称是 edu 文件夹，在 edu 文件夹中创建页面 a.html ，用于测试</p>
+<h3 id="3-在-nginx-的配置文件中进行负载均衡的配置"><a href="#3-在-nginx-的配置文件中进行负载均衡的配置" class="headerlink" title="3.在 nginx 的配置文件中进行负载均衡的配置"></a>3.在 nginx 的配置文件中进行负载均衡的配置</h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220230026.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220230043.png"></p>
+<h3 id="4-、nginx-分配服务器策略"><a href="#4-、nginx-分配服务器策略" class="headerlink" title="4 、nginx 分配服务器策略"></a>4 、nginx 分配服务器策略</h3><p><strong>第一种 轮询（默认）</strong><br>    每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器 down 。 掉，能自动剔除</p>
+<p><strong>第二种 weight</strong></p>
+<p>​    weight 代表权重默认为 1, 权重越高被分配的客户端越多，<strong>设置</strong>直接往已有的目标服务地址后面添加 weight=num</p>
+<p><strong>第三种 ip_hash</strong></p>
+<p>​    每个请求按访问 ip 的 的 hash 结果分配，这样每个访客固定访问一个后端服务器</p>
+<p><strong>第四种 fair</strong></p>
+<p>​    按后端服务器的响应时间来分配请求，响应时间短的优先分配</p>
+<h1 id="Nginx-配置实例-动静分离"><a href="#Nginx-配置实例-动静分离" class="headerlink" title="Nginx 配置实例- 动静分离"></a>Nginx 配置实例- 动静分离</h1><h3 id="1-什么是动静分离"><a href="#1-什么是动静分离" class="headerlink" title="1.什么是动静分离"></a>1.什么是动静分离</h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220230556.png"></p>
+<p>​    <strong>通过 location 指定不同的后缀名实现不同的请求转发。通过 expires 参数设置，可以使浏</strong><br><strong>览器缓存过期时间，减少与服务器之前的请求和流量。具体 Expires 定义：是给一个资源</strong><br><strong>设定一个过期时间，也就是说无需去 服务端验证，直接通过浏览器自身确认是否过期即可，</strong><br><strong>所以不会产生额外的流量。此种方法非常适合不经常变动的资源。（如果经常更新的文件，</strong><br><strong>不建议使用 Expires 来缓存），我这里设置 3d ，表示在这 3 天之内访问这个 URL ，发送一</strong><br><strong>个请求，比对服务器该文件最后更新时间没有变化，则不会从服务器抓取，返回状态码 304 ，</strong><br><strong>如果有修改，则直接从服务器重新下载，返回状态码 200 。</strong></p>
+<h3 id="2-准备工作-3"><a href="#2-准备工作-3" class="headerlink" title="2.准备工作"></a>2.准备工作</h3><p>​    <strong>在linux创建静态文件,用于将静态请求交给静态资源去匹配,充沛的发挥了服务器的长处</strong></p>
+<h3 id="3-具体配置-1"><a href="#3-具体配置-1" class="headerlink" title="3.具体配置"></a>3.具体配置</h3><p>​    <strong>location /访问路径/{root /静态路径地址/;auoindex    on; #显示文件夹下的文件}</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220230911.png"></p>
+<h1 id="Nginx-配置高可用的集群"><a href="#Nginx-配置高可用的集群" class="headerlink" title="Nginx 配置高可用的集群"></a>Nginx 配置高可用的集群</h1><h3 id="1-什么是服务器的高可用"><a href="#1-什么是服务器的高可用" class="headerlink" title="1.什么是服务器的高可用?"></a>1.什么是服务器的高可用?</h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220231323.png"></p>
+<p><strong>准备</strong></p>
+<p>​    两台ngxin服务器最好是不在同一台电脑上</p>
+<p>​    需要keepalived 用虚拟ip绑定nginx的IP,</p>
+<h3 id="2-配置高可用的准备工作"><a href="#2-配置高可用的准备工作" class="headerlink" title="2.配置高可用的准备工作"></a>2.配置高可用的准备工作</h3><p>​    需要两台服务器 192.168.17.128 和 192.168.17.129</p>
+<p>​    安装 nginx keepalived</p>
+<h3 id="3-install-keepalived-进行配置"><a href="#3-install-keepalived-进行配置" class="headerlink" title="3.install keepalived 进行配置"></a>3.install keepalived 进行配置</h3><ul>
+<li><p>使用yum: yum install keepalived -y</p>
+</li>
+<li><p><strong>配置/etc/keepalived/keepalived.conf文件</strong></p>
+<ul>
+<li><p>```conf<br>! Configuration File for keepalived</p>
+<p>global_defs {<br>notification_email {<br>  <a href="mailto:&#97;&#x63;&#x61;&#x73;&#115;&#x65;&#x6e;&#x40;&#x66;&#x69;&#x72;&#x65;&#119;&#x61;&#108;&#x6c;&#x2e;&#x6c;&#x6f;&#99;">&#97;&#x63;&#x61;&#x73;&#115;&#x65;&#x6e;&#x40;&#x66;&#x69;&#x72;&#x65;&#119;&#x61;&#108;&#x6c;&#x2e;&#x6c;&#x6f;&#99;</a><br>  <a href="mailto:&#102;&#x61;&#x69;&#108;&#111;&#118;&#101;&#114;&#x40;&#x66;&#105;&#x72;&#101;&#119;&#97;&#x6c;&#108;&#x2e;&#x6c;&#111;&#x63;">&#102;&#x61;&#x69;&#108;&#111;&#118;&#101;&#114;&#x40;&#x66;&#105;&#x72;&#101;&#119;&#97;&#x6c;&#108;&#x2e;&#x6c;&#111;&#x63;</a><br>  <a href="mailto:&#x73;&#x79;&#115;&#x61;&#100;&#109;&#x69;&#110;&#x40;&#102;&#105;&#114;&#x65;&#119;&#x61;&#108;&#x6c;&#46;&#108;&#x6f;&#x63;">&#x73;&#x79;&#115;&#x61;&#100;&#109;&#x69;&#110;&#x40;&#102;&#105;&#114;&#x65;&#119;&#x61;&#108;&#x6c;&#46;&#108;&#x6f;&#x63;</a><br>}<br>  notification_email_from <a href="mailto:&#65;&#108;&#101;&#x78;&#x61;&#x6e;&#100;&#114;&#101;&#x2e;&#67;&#x61;&#x73;&#115;&#101;&#x6e;&#x40;&#x66;&#105;&#x72;&#101;&#x77;&#x61;&#108;&#x6c;&#x2e;&#108;&#x6f;&#99;">&#65;&#108;&#101;&#x78;&#x61;&#x6e;&#100;&#114;&#101;&#x2e;&#67;&#x61;&#x73;&#115;&#101;&#x6e;&#x40;&#x66;&#105;&#x72;&#101;&#x77;&#x61;&#108;&#x6c;&#x2e;&#108;&#x6f;&#99;</a><br>  smtp_server 192.168.17.128<br>  smtp_connect_timeout 30<br>  router_id LVS_DEVEL<br>}<br>vrrp_script chk_http_port {<br>  script “/usr/local/src/nginx_check.sh”<br>  interval 2 #（检测脚本执行的间隔）<br>  weight 2<br>}<br>vrrp_instance VI_1 {<br>  state MASTER # 备份服务器上将 MASTER 改为 BACKUP<br>  interface ens33 //网卡<br>  virtual_router_id 51 # 主、备机的 virtual_router_id 必须相同<br>  priority 100 # 主、备机取不同的优先级，主机值较大，备份机值较小<br>  advert_int 1<br>  authentication {</p>
+<pre><code>auth_type PASS
+auth_pass 1111</code></pre>
+<p>  }<br>  virtual_ipaddress {</p>
+<pre><code>192.168.17.50 // VRRP H 虚拟地址</code></pre>
+<p>  }<br>}</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">* **在&#x2F;usr&#x2F;local&#x2F;src中创建和配置nginx_check.sh表是keepalived用于通过这个文件来检查nginx是否宕机,如何宕机之后从将虚拟IP绑定到主备(backup)的nginx中,避免客户不友好**</span><br><span class="line"></span><br><span class="line">  * &#96;&#96;&#96;sh</span><br><span class="line">    #!&#x2F;bin&#x2F;bash</span><br><span class="line">    A&#x3D;&#96;ps -C nginx –no-header |wc -l&#96;</span><br><span class="line">    if [ $A -eq 0 ];then</span><br><span class="line">    &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx</span><br><span class="line">    sleep 2</span><br><span class="line">    if [ &#96;ps -C nginx --no-header |wc -l&#96; -eq 0 ];then</span><br><span class="line">    killall keepalived</span><br><span class="line">    fi</span><br><span class="line">    fi</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>启动各个的nginx keepalived:systemctl [start|stop]  keepalived.service</p>
+</li>
+</ul>
+<h3 id="4-最终结果"><a href="#4-最终结果" class="headerlink" title="4.最终结果"></a>4.最终结果</h3><p>​    在浏览器地址栏输入 虚拟 ip 地址 192.168.17.50</p>
+<p>​    ip a 查看Ip所绑定的虚拟ip</p>
+<p>​    <img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220232935.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220233344.png"></p>
+<p>​    把主服务器（192.168.17.129 ）nginx 和 和 keepalived 停止，再输入 192.168.17.50</p>
+<p>​    <img src="C:%5CUsers%5CDELL%5Cblog%5Csource%5C_posts%5Cnginx%5C20210220233637.png"></p>
+<h1 id="nginx的原理"><a href="#nginx的原理" class="headerlink" title="nginx的原理"></a>nginx的原理</h1><h3 id="1-master和worker"><a href="#1-master和worker" class="headerlink" title="1.master和worker"></a>1.master和worker</h3><p>​    <strong>启动nginx之后,会开启两个进程,master和worker,master是管理员,主要分配任务,然后交给worker去处理</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210221090540.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210221090629.png"></p>
+<h3 id="2-woker是工作的"><a href="#2-woker是工作的" class="headerlink" title="2.woker是工作的"></a><strong>2.woker是工作的</strong></h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210221093246.png"></p>
+<h3 id="3-一个master和多个worker有什么好处"><a href="#3-一个master和多个worker有什么好处" class="headerlink" title="3.一个master和多个worker有什么好处"></a>3.一个master和多个worker有什么好处</h3><p>​    可以使用nginx -s reload 热部署 利用nginx进行热部署操作</p>
+<p>​    每个worker是独立的进程,如果有其中的一个woker出现问题,其它独立的woker继续进行争抢,实现请求过程,不会造成服务器中断</p>
+<h3 id="4-设置多少个worker合适"><a href="#4-设置多少个worker合适" class="headerlink" title="4.设置多少个worker合适"></a>4.设置多少个worker合适</h3><p>​    woker数和服务器的cpu数量等是最为适合的</p>
+<h3 id="5-连接数worker-connection"><a href="#5-连接数worker-connection" class="headerlink" title="5.连接数worker_connection"></a>5.连接数worker_connection</h3><ul>
+<li>发送请求占用了几个woker连接数<ul>
+<li>静态资源2|动态资源4个,原因nginx不支持java应用,所以转发到其他服务中,这样一来一回就是两个</li>
+</ul>
+</li>
+<li>nginx有一个master,有四个woker,每个woker支持最大的连接数1024,支持的最大并发数是多少？<ul>
+<li>普通的静态访问最大并发数是:worker_connections*worker_processes/2(<strong><font color="green">除以2代表访问的nginx上的静态资源</font></strong>)</li>
+<li>而如果是http作为反向代理的话,最大并发数量应该是worker_connections*worker_processes/4(<strong><font color="green">除以4代表访问的通过反向代理,代理到其它的服务上tomcat,一来一回又是2个连接</font></strong>)</li>
+</ul>
+</li>
+</ul>
+]]></content>
+  </entry>
 </search>
