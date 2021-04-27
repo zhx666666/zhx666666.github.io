@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="nginx, abilited">
+    <meta name="keywords" content="java发送邮箱, abilited">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>nginx | abilited</title>
+    <title>java发送邮箱 | abilited</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">nginx</h1>
+                    <h1 class="description center-align post-title">java发送邮箱</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-02-20
+                    2021-02-21
                 </div>
                 
 
@@ -464,122 +464,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><h2 id="1-什么是nginx"><a href="#1-什么是nginx" class="headerlink" title="1.什么是nginx"></a>1.什么是nginx</h2><p><strong>nginx是高性能的HTTP和反向代理服务器,处理高并发能力是十分强大的,能经受高负载的考验,有报告表示支持高达50000个并发连接数</strong></p>
-<h2 id="2-正向代理"><a href="#2-正向代理" class="headerlink" title="2.正向代理"></a>2.正向代理</h2><p><strong>需要再客户端配置代理服务器进行指定网站访问</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220162156.png"></p>
-<h2 id="3-反向代理"><a href="#3-反向代理" class="headerlink" title="3.反向代理"></a>3.反向代理</h2><p><strong>暴露的代理服务器地址,隐藏了真实服务器ip地址</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220162505.png"></p>
-<h2 id="4-负载均衡"><a href="#4-负载均衡" class="headerlink" title="4.负载均衡"></a>4.负载均衡</h2><p><strong>增加服务器的数量,然后将请求分发到各个服务器上,将原来请求集中导弹个服务器上的情况为将请求分发到多个服务器上,将负载分发到不同的服务器,也就是我们所说的负载均衡</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220162836.png"></p>
-<h2 id="5-动静分离"><a href="#5-动静分离" class="headerlink" title="5.动静分离"></a>5.动静分离</h2><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220162929.png"></p>
-<h1 id="nginx的安装"><a href="#nginx的安装" class="headerlink" title="nginx的安装"></a>nginx的安装</h1><h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><h6 id="1-打开虚拟机-使用远程连接工具-宝塔-Ishell-Mobaxtream-连接linux系统"><a href="#1-打开虚拟机-使用远程连接工具-宝塔-Ishell-Mobaxtream-连接linux系统" class="headerlink" title="1.打开虚拟机,使用远程连接工具(宝塔,Ishell,Mobaxtream..)连接linux系统"></a>1.打开虚拟机,使用远程连接工具(宝塔,Ishell,Mobaxtream..)连接linux系统</h6><h6 id="2-到ngxin官方下载软件"><a href="#2-到ngxin官方下载软件" class="headerlink" title="2.到ngxin官方下载软件"></a>2.到ngxin官方下载软件</h6><p><strong><a target="_blank" rel="noopener" href="http://nginx.org/">http://nginx.org/</a></strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220163358.png"></p>
-<h2 id="2-、开始进行-nginx-安装"><a href="#2-、开始进行-nginx-安装" class="headerlink" title="2 、开始进行 nginx 安装"></a>2 、开始进行 nginx 安装</h2><p><strong><font color='red'>建议安装到linux,因为这样才能充分的发挥(原因Linux特有的Io多路复用机制)</font></strong></p>
-<h2 id="1-安装nginx依赖的prce"><a href="#1-安装nginx依赖的prce" class="headerlink" title="1.安装nginx依赖的prce"></a>1.安装nginx依赖的prce</h2><h5 id="第一步-联网下载-pcre-压缩文件依赖"><a href="#第一步-联网下载-pcre-压缩文件依赖" class="headerlink" title="第一步 联网下载 pcre 压缩文件依赖"></a>第一步 联网下载 pcre 压缩文件依赖</h5><h6 id="wget-http-downloads-sourceforge-net-project-pcre-pcre-8-37-pcre-8-37-tar-gz"><a href="#wget-http-downloads-sourceforge-net-project-pcre-pcre-8-37-pcre-8-37-tar-gz" class="headerlink" title="wget http://downloads.sourceforge.net/project/pcre/pcre/8.37/pcre-8.37.tar.gz"></a>wget <a target="_blank" rel="noopener" href="http://downloads.sourceforge.net/project/pcre/pcre/8.37/pcre-8.37.tar.gz">http://downloads.sourceforge.net/project/pcre/pcre/8.37/pcre-8.37.tar.gz</a></h6><h5 id="第二步-解压压缩文件"><a href="#第二步-解压压缩文件" class="headerlink" title="第二步 解压压缩文件"></a>第二步 解压压缩文件</h5><p><strong>安装openssl 、zlib 、 gcc依赖 yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel依赖</strong></p>
-<h6 id="使用命令-tar-–xvf-pcre-8-37-tar-gz"><a href="#使用命令-tar-–xvf-pcre-8-37-tar-gz" class="headerlink" title="使用命令 tar –xvf pcre-8.37.tar.gz"></a><strong>使用命令 tar –xvf pcre-8.37.tar.gz</strong></h6><h5 id="第三步-configure-完成后，回到-pcre-目录下执行-make-，最后执行-make-install-pcre-config-–version-查看pcre的版本"><a href="#第三步-configure-完成后，回到-pcre-目录下执行-make-，最后执行-make-install-pcre-config-–version-查看pcre的版本" class="headerlink" title="第三步./configure 完成后，回到 pcre 目录下执行 make ，最后执行 make install,pcre-config –version 查看pcre的版本"></a>第三步./configure 完成后，回到 pcre 目录下执行 make ，最后执行 make install,pcre-config –version 查看pcre的版本</h5><h2 id="2-安装-nginx"><a href="#2-安装-nginx" class="headerlink" title="2.安装 nginx"></a>2.安装 nginx</h2><p><strong>使用命令解压(linux):tar -zxvf  xxx.tar.gz</strong></p>
-<p><strong>./configure</strong></p>
-<p><strong>make &amp;&amp; make install</strong></p>
-<p><strong>进入目录 /usr/local/nginx/sbin/nginx 启动服务</strong></p>
-<h2 id="3-防火墙问题"><a href="#3-防火墙问题" class="headerlink" title="3.防火墙问题"></a>3.防火墙问题</h2><ul>
-<li><p>关闭防火墙 systemctl stop firewalld</p>
-</li>
-<li><p>开发端口号 firewall-cmd –add-port=80/tcp –permanent 记得重启防火墙哦~</p>
+                <h1 id="利用java实现发送邮件"><a href="#利用java实现发送邮件" class="headerlink" title="利用java实现发送邮件"></a>利用java实现发送邮件</h1><p>​    电子邮件的应用非常广泛，常见的如在某网站注册了一个账户，自动发送一封激活邮件，通过邮件找回密码，自动批量发送活动信息等。很显然这些应用不可能和我们自己平时发邮件一样，先打开浏览器，登录邮箱，创建邮件再发送。本文将简单介绍如何通过 Java 代码来创建电子邮件，并连接邮件服务器发送邮件。</p>
+<h2 id="电子邮件协议"><a href="#电子邮件协议" class="headerlink" title="电子邮件协议"></a><strong>电子邮件协议</strong></h2><p>​    电子邮件在网络中传输和网页一样需要遵从特定的协议，常用的电子邮件协议包括 SMTP，POP3，IMAP。其中邮件的创建和发送只需要用到 SMTP协议，所以本文也只会涉及到SMTP协议。SMTP 是 Simple Mail Transfer Protocol 的简称，即简单邮件传输协议。</p>
+<h2 id="JavaMail"><a href="#JavaMail" class="headerlink" title="JavaMail"></a><strong>JavaMail</strong></h2><p>​    我们平时通过 Java 代码打开一个 http 网页链接时，通常可以使用已经对 http 协议封装好的 HttpURLConnection 类来快速地实现。Java 官方也提供了对电子邮件协议封装的 Java 类库，就是JavaMail，但并没有包含到标准的 JDK 中，需要我们自己去官方下载，这里我从 JavaEE 官方的 Github 仓库下载。<br>JavaMail 下载地址:<a target="_blank" rel="noopener" href="https://github.com/javaee/javamail/releases">https://github.com/javaee/javamail/releases</a></p>
+<p>如果是mvn项目的话，我们只需要添加依赖即可<br><dependency><br><groupId>javax.mail</groupId><br><artifactId>mail</artifactId><br><version>1.5.0-b01</version><br></dependency></p>
+<h2 id="创建一封简单的电子邮件"><a href="#创建一封简单的电子邮件" class="headerlink" title="创建一封简单的电子邮件"></a><strong>创建一封简单的电子邮件</strong></h2><p>​    邮件创建步骤:</p>
 <ul>
-<li>查看端口是否开发:firewall-cmd –list-all</li>
-</ul>
+<li><p>创建一个邮件对象（MimeMessage）；</p>
+</li>
+<li><p>设置发件人，收件人，可选增加多个收件人，抄送人，密送人；</p>
+</li>
+<li><p>设置邮件的主题（标题）；</p>
+</li>
+<li><p>设置邮件的正文（内容）；</p>
+</li>
+<li><p>设置显示的发送时间；</p>
+</li>
+<li><p>保存到本地。</p>
+</li>
+<li><p>代码如下：</p>
 </li>
 </ul>
-<h1 id="nginx常用的命令"><a href="#nginx常用的命令" class="headerlink" title="nginx常用的命令"></a>nginx常用的命令</h1><p><strong>进入到/usr/local/nginx/sbin目录中nginx的命令才会生效哦</strong></p>
-<ul>
-<li>查看版本 ./nginx -v</li>
-<li>启动nginx ./nginx</li>
-<li>停止nginx ./nginx -s stop</li>
-<li>重载nginx ./nginx -s reload</li>
-</ul>
-<h1 id="nginx的配置文件"><a href="#nginx的配置文件" class="headerlink" title="nginx的配置文件"></a>nginx的配置文件</h1><h4 id="1-位置-usr-local-nginx-conf-nginx-conf"><a href="#1-位置-usr-local-nginx-conf-nginx-conf" class="headerlink" title="1.位置:/usr/local/nginx/conf/nginx.conf"></a><strong>1.位置:/usr/local/nginx/conf/nginx.conf</strong></h4><h4 id="2-配置文件中的内容"><a href="#2-配置文件中的内容" class="headerlink" title="2.配置文件中的内容"></a>2.配置文件中的内容</h4><h5 id="1-全局块：配置服务器整体运行的配置指令比如-worker-processes-1-处理并发数的配置"><a href="#1-全局块：配置服务器整体运行的配置指令比如-worker-processes-1-处理并发数的配置" class="headerlink" title="1.全局块：配置服务器整体运行的配置指令比如 worker_processes 1; 处理并发数的配置"></a>1.全局块：配置服务器整体运行的配置指令比如 worker_processes 1; 处理并发数的配置</h5><h5 id="2-events-块-：影响-Nginx-服务器与用户的网络连接比如-worker-connections-1024-支持的最大连接数为-1024"><a href="#2-events-块-：影响-Nginx-服务器与用户的网络连接比如-worker-connections-1024-支持的最大连接数为-1024" class="headerlink" title="2.events 块 ：影响 Nginx 服务器与用户的网络连接比如 worker_connections 1024; 支持的最大连接数为 1024"></a>2.events 块 ：影响 Nginx 服务器与用户的网络连接比如 worker_connections 1024; 支持的最大连接数为 1024</h5><h5 id="3-http-块-还包含两部分：http-全局块-server-块"><a href="#3-http-块-还包含两部分：http-全局块-server-块" class="headerlink" title="3.http 块:还包含两部分：http 全局块 server 块"></a>3.http 块:还包含两部分：http 全局块 server 块</h5><h1 id="Nginx-配置实例-反向代理-实例-1"><a href="#Nginx-配置实例-反向代理-实例-1" class="headerlink" title="Nginx 配置实例- 反向代理 实例 1"></a>Nginx 配置实例- 反向代理 实例 1</h1><h3 id="1-目的"><a href="#1-目的" class="headerlink" title="1.目的"></a>1.目的</h3><p>​    <strong>打开浏览器,在浏览地址栏输入地址 <a target="_blank" rel="noopener" href="http://www.abilities.com,很据./System32/hosts%E6%96%87%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AE%E7%9A%84%E5%9F%9F%E5%90%8D%E6%89%80%E8%A7%A3%E6%9E%90%E7%9A%84Ip,%E8%AE%BF%E9%97%AE%E8%BF%99%E4%B8%AAip">www.abilities.com,很据./System32/hosts文件中配置的域名所解析的Ip,访问这个ip</a></strong></p>
-<h3 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2.准备工作"></a>2.准备工作</h3><p><strong>linux中安装服务tomcat通过 tar -xvf xxx解压,进入到服务的bin目录找到./startup.sh 启动 ,./shutdown.sh 关闭,由于在同局域不同ip中不要忘记<em>对外开发服务哦</em></strong></p>
-<h3 id="3-访问流程"><a href="#3-访问流程" class="headerlink" title="3.访问流程"></a><strong>3.访问流程</strong></h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220224317.png"></p>
-<h3 id="4-具体配置"><a href="#4-具体配置" class="headerlink" title="4.具体配置"></a>4.具体配置</h3><p><strong>第一步 在 在 windows 系统的 host 文件进行域名和 ip 对应关系的配置</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220224727.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.17.128	www.abilities.com</span><br></pre></td></tr></table></figure>
-<p><strong>第二步 在 在 nginx 进行请求转发的配置（反向代理配置）</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220224908.png"></p>
-<h1 id="Nginx-配置实例-反向代理实例-2"><a href="#Nginx-配置实例-反向代理实例-2" class="headerlink" title="Nginx 配置实例- 反向代理实例 2"></a><strong>Nginx 配置实例- 反向代理实例 2</strong></h1><h3 id="1-实现效果"><a href="#1-实现效果" class="headerlink" title="1.实现效果"></a>1.实现效果</h3><p>​    使用nginx反向代理,根据访问的路径跳转到不同端口的服务器,nginx监听的端口为9001;</p>
-<p>​    访问 192.168.17.128:9001/edu/ 直接代理到127.0.0.1:8081</p>
-<p>​    访问 192.168.17.128:9001/vod/ 直接代理到127.0.0.1:8082</p>
-<h3 id="2-准备工作-1"><a href="#2-准备工作-1" class="headerlink" title="2.准备工作"></a>2.准备工作</h3><p>​    准备两个占用端口为8080 8081的tomcat服务器</p>
-<p>​    部署不同的引用避免冲突,明确的区分</p>
-<h3 id="3-具体配置"><a href="#3-具体配置" class="headerlink" title="3.具体配置"></a>3.具体配置</h3><p>​    找到nginx的配置文件,进行反向代理配置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220225455.png"></p>
-<p>​    开发9001 8080 8081端口</p>
-<h3 id="4-test-result"><a href="#4-test-result" class="headerlink" title="4.test result"></a>4.test result</h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220225646.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220225708.png"></p>
-<h1 id="Nginx-配置实例-负载均衡"><a href="#Nginx-配置实例-负载均衡" class="headerlink" title="Nginx 配置实例- 负载均衡"></a>Nginx 配置实例- 负载均衡</h1><h3 id="1-效果"><a href="#1-效果" class="headerlink" title="1.效果"></a>1.效果</h3><p>​    浏览器地址栏输入地址 <a target="_blank" rel="noopener" href="http://192.168.17.129/edu/a.html">http://192.168.17.129/edu/a.html</a> ，负载均衡效果，平均 8080和 和 8081 端口中</p>
-<h3 id="2-准备工作-2"><a href="#2-准备工作-2" class="headerlink" title="2.准备工作"></a>2.准备工作</h3><p>​    准备两台 tomcat 服务器，一台 8080 ，一台 8081</p>
-<p>​    在两台 tomcat 里面 webapps 目录中，创建名称是 edu 文件夹，在 edu 文件夹中创建页面 a.html ，用于测试</p>
-<h3 id="3-在-nginx-的配置文件中进行负载均衡的配置"><a href="#3-在-nginx-的配置文件中进行负载均衡的配置" class="headerlink" title="3.在 nginx 的配置文件中进行负载均衡的配置"></a>3.在 nginx 的配置文件中进行负载均衡的配置</h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220230026.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220230043.png"></p>
-<h3 id="4-、nginx-分配服务器策略"><a href="#4-、nginx-分配服务器策略" class="headerlink" title="4 、nginx 分配服务器策略"></a>4 、nginx 分配服务器策略</h3><p><strong>第一种 轮询（默认）</strong><br>    每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器 down 。 掉，能自动剔除</p>
-<p><strong>第二种 weight</strong></p>
-<p>​    weight 代表权重默认为 1, 权重越高被分配的客户端越多，<strong>设置</strong>直接往已有的目标服务地址后面添加 weight=num</p>
-<p><strong>第三种 ip_hash</strong></p>
-<p>​    每个请求按访问 ip 的 的 hash 结果分配，这样每个访客固定访问一个后端服务器</p>
-<p><strong>第四种 fair</strong></p>
-<p>​    按后端服务器的响应时间来分配请求，响应时间短的优先分配</p>
-<h1 id="Nginx-配置实例-动静分离"><a href="#Nginx-配置实例-动静分离" class="headerlink" title="Nginx 配置实例- 动静分离"></a>Nginx 配置实例- 动静分离</h1><h3 id="1-什么是动静分离"><a href="#1-什么是动静分离" class="headerlink" title="1.什么是动静分离"></a>1.什么是动静分离</h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220230556.png"></p>
-<p>​    <strong>通过 location 指定不同的后缀名实现不同的请求转发。通过 expires 参数设置，可以使浏</strong><br><strong>览器缓存过期时间，减少与服务器之前的请求和流量。具体 Expires 定义：是给一个资源</strong><br><strong>设定一个过期时间，也就是说无需去 服务端验证，直接通过浏览器自身确认是否过期即可，</strong><br><strong>所以不会产生额外的流量。此种方法非常适合不经常变动的资源。（如果经常更新的文件，</strong><br><strong>不建议使用 Expires 来缓存），我这里设置 3d ，表示在这 3 天之内访问这个 URL ，发送一</strong><br><strong>个请求，比对服务器该文件最后更新时间没有变化，则不会从服务器抓取，返回状态码 304 ，</strong><br><strong>如果有修改，则直接从服务器重新下载，返回状态码 200 。</strong></p>
-<h3 id="2-准备工作-3"><a href="#2-准备工作-3" class="headerlink" title="2.准备工作"></a>2.准备工作</h3><p>​    <strong>在linux创建静态文件,用于将静态请求交给静态资源去匹配,充沛的发挥了服务器的长处</strong></p>
-<h3 id="3-具体配置-1"><a href="#3-具体配置-1" class="headerlink" title="3.具体配置"></a>3.具体配置</h3><p>​    <strong>location /访问路径/{root /静态路径地址/;auoindex    on; #显示文件夹下的文件}</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220230911.png"></p>
-<h1 id="Nginx-配置高可用的集群"><a href="#Nginx-配置高可用的集群" class="headerlink" title="Nginx 配置高可用的集群"></a>Nginx 配置高可用的集群</h1><h3 id="1-什么是服务器的高可用"><a href="#1-什么是服务器的高可用" class="headerlink" title="1.什么是服务器的高可用?"></a>1.什么是服务器的高可用?</h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220231323.png"></p>
-<p><strong>准备</strong></p>
-<p>​    两台ngxin服务器最好是不在同一台电脑上</p>
-<p>​    需要keepalived 用虚拟ip绑定nginx的IP,</p>
-<h3 id="2-配置高可用的准备工作"><a href="#2-配置高可用的准备工作" class="headerlink" title="2.配置高可用的准备工作"></a>2.配置高可用的准备工作</h3><p>​    需要两台服务器 192.168.17.128 和 192.168.17.129</p>
-<p>​    安装 nginx keepalived</p>
-<h3 id="3-install-keepalived-进行配置"><a href="#3-install-keepalived-进行配置" class="headerlink" title="3.install keepalived 进行配置"></a>3.install keepalived 进行配置</h3><ul>
-<li><p>使用yum: yum install keepalived -y</p>
-</li>
-<li><p><strong>配置/etc/keepalived/keepalived.conf文件</strong></p>
-<ul>
-<li><p>```conf<br>! Configuration File for keepalived</p>
-<p>global_defs {<br>notification_email {<br>  <a href="mailto:&#97;&#x63;&#x61;&#x73;&#115;&#x65;&#x6e;&#x40;&#x66;&#x69;&#x72;&#x65;&#119;&#x61;&#108;&#x6c;&#x2e;&#x6c;&#x6f;&#99;">&#97;&#x63;&#x61;&#x73;&#115;&#x65;&#x6e;&#x40;&#x66;&#x69;&#x72;&#x65;&#119;&#x61;&#108;&#x6c;&#x2e;&#x6c;&#x6f;&#99;</a><br>  <a href="mailto:&#102;&#x61;&#x69;&#108;&#111;&#118;&#101;&#114;&#x40;&#x66;&#105;&#x72;&#101;&#119;&#97;&#x6c;&#108;&#x2e;&#x6c;&#111;&#x63;">&#102;&#x61;&#x69;&#108;&#111;&#118;&#101;&#114;&#x40;&#x66;&#105;&#x72;&#101;&#119;&#97;&#x6c;&#108;&#x2e;&#x6c;&#111;&#x63;</a><br>  <a href="mailto:&#x73;&#x79;&#115;&#x61;&#100;&#109;&#x69;&#110;&#x40;&#102;&#105;&#114;&#x65;&#119;&#x61;&#108;&#x6c;&#46;&#108;&#x6f;&#x63;">&#x73;&#x79;&#115;&#x61;&#100;&#109;&#x69;&#110;&#x40;&#102;&#105;&#114;&#x65;&#119;&#x61;&#108;&#x6c;&#46;&#108;&#x6f;&#x63;</a><br>}<br>  notification_email_from <a href="mailto:&#65;&#108;&#101;&#x78;&#x61;&#x6e;&#100;&#114;&#101;&#x2e;&#67;&#x61;&#x73;&#115;&#101;&#x6e;&#x40;&#x66;&#105;&#x72;&#101;&#x77;&#x61;&#108;&#x6c;&#x2e;&#108;&#x6f;&#99;">&#65;&#108;&#101;&#x78;&#x61;&#x6e;&#100;&#114;&#101;&#x2e;&#67;&#x61;&#x73;&#115;&#101;&#x6e;&#x40;&#x66;&#105;&#x72;&#101;&#x77;&#x61;&#108;&#x6c;&#x2e;&#108;&#x6f;&#99;</a><br>  smtp_server 192.168.17.128<br>  smtp_connect_timeout 30<br>  router_id LVS_DEVEL<br>}<br>vrrp_script chk_http_port {<br>  script “/usr/local/src/nginx_check.sh”<br>  interval 2 #（检测脚本执行的间隔）<br>  weight 2<br>}<br>vrrp_instance VI_1 {<br>  state MASTER # 备份服务器上将 MASTER 改为 BACKUP<br>  interface ens33 //网卡<br>  virtual_router_id 51 # 主、备机的 virtual_router_id 必须相同<br>  priority 100 # 主、备机取不同的优先级，主机值较大，备份机值较小<br>  advert_int 1<br>  authentication {</p>
-<pre><code>auth_type PASS
-auth_pass 1111</code></pre>
-<p>  }<br>  virtual_ipaddress {</p>
-<pre><code>192.168.17.50 // VRRP H 虚拟地址</code></pre>
-<p>  }<br>}</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* **在&#x2F;usr&#x2F;local&#x2F;src中创建和配置nginx_check.sh表是keepalived用于通过这个文件来检查nginx是否宕机,如何宕机之后从将虚拟IP绑定到主备(backup)的nginx中,避免客户不友好**</span><br><span class="line"></span><br><span class="line">  * &#96;&#96;&#96;sh</span><br><span class="line">    #!&#x2F;bin&#x2F;bash</span><br><span class="line">    A&#x3D;&#96;ps -C nginx –no-header |wc -l&#96;</span><br><span class="line">    if [ $A -eq 0 ];then</span><br><span class="line">    &#x2F;usr&#x2F;local&#x2F;nginx&#x2F;sbin&#x2F;nginx</span><br><span class="line">    sleep 2</span><br><span class="line">    if [ &#96;ps -C nginx --no-header |wc -l&#96; -eq 0 ];then</span><br><span class="line">    killall keepalived</span><br><span class="line">    fi</span><br><span class="line">    fi</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-<li><p>启动各个的nginx keepalived:systemctl [start|stop]  keepalived.service</p>
-</li>
-</ul>
-<h3 id="4-最终结果"><a href="#4-最终结果" class="headerlink" title="4.最终结果"></a>4.最终结果</h3><p>​    在浏览器地址栏输入 虚拟 ip 地址 192.168.17.50</p>
-<p>​    ip a 查看Ip所绑定的虚拟ip</p>
-<p>​    <img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220232935.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210220233344.png"></p>
-<p>​    把主服务器（192.168.17.129 ）nginx 和 和 keepalived 停止，再输入 192.168.17.50</p>
-<p>​    <img src="C:%5CUsers%5CDELL%5Cblog%5Csource%5C_posts%5Cnginx%5C20210220233637.png"></p>
-<h1 id="nginx的原理"><a href="#nginx的原理" class="headerlink" title="nginx的原理"></a>nginx的原理</h1><h3 id="1-master和worker"><a href="#1-master和worker" class="headerlink" title="1.master和worker"></a>1.master和worker</h3><p>​    <strong>启动nginx之后,会开启两个进程,master和worker,master是管理员,主要分配任务,然后交给worker去处理</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210221090540.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210221090629.png"></p>
-<h3 id="2-woker是工作的"><a href="#2-woker是工作的" class="headerlink" title="2.woker是工作的"></a><strong>2.woker是工作的</strong></h3><p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210221093246.png"></p>
-<h3 id="3-一个master和多个worker有什么好处"><a href="#3-一个master和多个worker有什么好处" class="headerlink" title="3.一个master和多个worker有什么好处"></a>3.一个master和多个worker有什么好处</h3><p>​    可以使用nginx -s reload 热部署 利用nginx进行热部署操作</p>
-<p>​    每个worker是独立的进程,如果有其中的一个woker出现问题,其它独立的woker继续进行争抢,实现请求过程,不会造成服务器中断</p>
-<h3 id="4-设置多少个worker合适"><a href="#4-设置多少个worker合适" class="headerlink" title="4.设置多少个worker合适"></a>4.设置多少个worker合适</h3><p>​    woker数和服务器的cpu数量等是最为适合的</p>
-<h3 id="5-连接数worker-connection"><a href="#5-连接数worker-connection" class="headerlink" title="5.连接数worker_connection"></a>5.连接数worker_connection</h3><ul>
-<li>发送请求占用了几个woker连接数<ul>
-<li>静态资源2|动态资源4个,原因nginx不支持java应用,所以转发到其他服务中,这样一来一回就是两个</li>
-</ul>
-</li>
-<li>nginx有一个master,有四个woker,每个woker支持最大的连接数1024,支持的最大并发数是多少？<ul>
-<li>普通的静态访问最大并发数是:worker_connections*worker_processes/2(<strong><font color="green">除以2代表访问的nginx上的静态资源</font></strong>)</li>
-<li>而如果是http作为反向代理的话,最大并发数量应该是worker_connections*worker_processes/4(<strong><font color="green">除以4代表访问的通过反向代理,代理到其它的服务上tomcat,一来一回又是2个连接</font></strong>)</li>
-</ul>
-</li>
-</ul>
-
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMail</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 创建一封邮件</span></span><br><span class="line">        Properties props = <span class="keyword">new</span> Properties();                <span class="comment">// 用于连接邮件服务器的参数配置（发送邮件时才需要用到）</span></span><br><span class="line">        Session session= Session.getInstance(props);        <span class="comment">// 根据参数配置，创建会话对象（为了发送邮件准备的）</span></span><br><span class="line">        MimeMessage message = <span class="keyword">new</span> MimeMessage(session);     <span class="comment">// 创建邮件对象    </span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">     * 也可以根据已有的eml邮件文件创建 MimeMessage 对象</span></span><br><span class="line"><span class="comment">     * MimeMessage message = new MimeMessage(session, new FileInputStream(&quot;myEmail.eml&quot;));</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 2. From: 发件人</span></span><br><span class="line">    <span class="comment">//    其中 InternetAddress 的三个参数分别为: 邮箱, 显示的昵称(只用于显示, 没有特别的要求), 昵称的字符集编码</span></span><br><span class="line">    <span class="comment">//    真正要发送时, 邮箱必须是真实有效的邮箱。</span></span><br><span class="line">    message.setFrom(<span class="keyword">new</span> InternetAddress(<span class="string">&quot;email@send.com&quot;</span>, <span class="string">&quot;USER_AA&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 3. To: 收件人</span></span><br><span class="line">    message.setRecipient(MimeMessage.RecipientType.TO, <span class="keyword">new</span> InternetAddress(<span class="string">&quot;cc@receive.com&quot;</span>, <span class="string">&quot;USER_CC&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">    <span class="comment">//    To: 增加收件人（可选）</span></span><br><span class="line">    message.addRecipient(MimeMessage.RecipientType.TO, <span class="keyword">new</span> InternetAddress(<span class="string">&quot;dd@receive.com&quot;</span>, <span class="string">&quot;USER_DD&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">    <span class="comment">//    Cc: 抄送（可选）</span></span><br><span class="line">    message.setRecipient(MimeMessage.RecipientType.CC, <span class="keyword">new</span> InternetAddress(<span class="string">&quot;ee@receive.com&quot;</span>, <span class="string">&quot;USER_EE&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line">    <span class="comment">//    Bcc: 密送（可选）</span></span><br><span class="line">    message.setRecipient(MimeMessage.RecipientType.BCC, <span class="keyword">new</span> InternetAddress(<span class="string">&quot;ff@receive.com&quot;</span>, <span class="string">&quot;USER_FF&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 4. Subject: 邮件主题</span></span><br><span class="line">    message.setSubject(<span class="string">&quot;邮件主题&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 5. Content: 邮件正文（可以使用html标签）</span></span><br><span class="line">    message.setContent(<span class="string">&quot;这是邮件正文&quot;</span>, <span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 6. 设置显示的发件时间</span></span><br><span class="line">    message.setSentDate(<span class="keyword">new</span> Date());</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 7. 保存前面的设置</span></span><br><span class="line">    message.saveChanges();</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 8. 将该邮件保存到本地</span></span><br><span class="line">    OutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">&quot;myEmail.eml&quot;</span>);</span><br><span class="line">    message.writeTo(out);</span><br><span class="line">    out.flush();</span><br><span class="line">    out.close();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>保存的 myEmail.eml 可以使用邮件客户端打开查看，实际上就是一堆符合SMTP协议格式的文本（内容使用base64进行了编码），也可用记事本打开，如下所示:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210222002531.png"></p>
+<p><strong>发送电子邮件</strong><br>    发送邮件首先需要有一个邮箱账号和密码，本文以网易126邮箱为例，邮箱账号必须要开启 SMTP 服务，在浏览器网页登录邮箱后一般在邮箱的“设置”选项中可以开启，并记下邮箱的 SMTP 服务器地址，如下所示（其他邮箱大同小异）:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhx666666/img/img/20210222002722.png"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#125;<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SendMail</span> </span>&#123;</span><br><span class="line"><span class="comment">// 发件人的 邮箱 和 密码（替换为自己的邮箱和密码）</span></span><br><span class="line"><span class="comment">// PS: 某些邮箱服务器为了增加邮箱本身密码的安全性，给 SMTP 客户端设置了独立密码（有的邮箱称为“授权码”）,</span></span><br><span class="line"><span class="comment">//     对于开启了独立密码的邮箱, 这里的邮箱密码必需使用这个独立密码（授权码）。</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String myEmailAccount = <span class="string">&quot;xxxxxxx@126.com&quot;</span>;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String myEmailPassword = <span class="string">&quot;xxxxxxxx&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 发件人邮箱的 SMTP 服务器地址, 必须准确, 不同邮件服务器地址不同, 一般(只是一般, 绝非绝对)格式为: smtp.xxx.com</span></span><br><span class="line"><span class="comment">// 网易126邮箱的 SMTP 服务器地址为: smtp.126.com</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String myEmailSMTPHost = <span class="string">&quot;smtp.126.com&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 收件人邮箱（替换为自己知道的有效邮箱）</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String receiveMailAccount = <span class="string">&quot;xxxxxx@qq.com&quot;</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="comment">// 1. 创建参数配置, 用于连接邮件服务器的参数配置</span></span><br><span class="line">    Properties props = <span class="keyword">new</span> Properties();                    <span class="comment">// 参数配置</span></span><br><span class="line">    props.setProperty(<span class="string">&quot;mail.transport.protocol&quot;</span>, <span class="string">&quot;smtp&quot;</span>);   <span class="comment">// 使用的协议（JavaMail规范要求）</span></span><br><span class="line">    props.setProperty(<span class="string">&quot;mail.smtp.host&quot;</span>, myEmailSMTPHost);   <span class="comment">// 发件人的邮箱的 SMTP 服务器地址</span></span><br><span class="line">    props.setProperty(<span class="string">&quot;mail.smtp.auth&quot;</span>, <span class="string">&quot;true&quot;</span>);            <span class="comment">// 需要请求认证</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">// PS: 某些邮箱服务器要求 SMTP 连接需要使用 SSL 安全认证 (为了提高安全性, 邮箱支持SSL连接, 也可以自己开启),</span></span><br><span class="line">    <span class="comment">//     如果无法连接邮件服务器, 仔细查看控制台打印的 log, 如果有有类似 “连接失败, 要求 SSL 安全连接” 等错误,</span></span><br><span class="line">    <span class="comment">//     取消下面 /* ... */ 之间的注释代码, 开启 SSL 安全连接。</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    // SMTP 服务器的端口 (非 SSL 连接的端口一般默认为 25, 可以不添加, 如果开启了 SSL 连接,</span></span><br><span class="line"><span class="comment">    //                  需要改为对应邮箱的 SMTP 服务器的端口, 具体可查看对应邮箱服务的帮助,</span></span><br><span class="line"><span class="comment">    //                  QQ邮箱的SMTP(SLL)端口为465或587, 其他邮箱自行去查看)</span></span><br><span class="line"><span class="comment">    final String smtpPort = &quot;465&quot;;</span></span><br><span class="line"><span class="comment">    props.setProperty(&quot;mail.smtp.port&quot;, smtpPort);</span></span><br><span class="line"><span class="comment">    props.setProperty(&quot;mail.smtp.socketFactory.class&quot;, &quot;javax.net.ssl.SSLSocketFactory&quot;);</span></span><br><span class="line"><span class="comment">    props.setProperty(&quot;mail.smtp.socketFactory.fallback&quot;, &quot;false&quot;);</span></span><br><span class="line"><span class="comment">    props.setProperty(&quot;mail.smtp.socketFactory.port&quot;, smtpPort);</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 2. 根据配置创建会话对象, 用于和邮件服务器交互</span></span><br><span class="line">    Session session = Session.getInstance(props);</span><br><span class="line">    <span class="comment">// 设置为debug模式, 可以查看详细的发送 log</span></span><br><span class="line">    session.setDebug(<span class="keyword">true</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 3. 创建一封邮件</span></span><br><span class="line">    MimeMessage message = createMimeMessage(session, myEmailAccount, receiveMailAccount);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 4. 根据 Session 获取邮件传输对象</span></span><br><span class="line">    Transport transport = session.getTransport();</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 5. 使用 邮箱账号 和 密码 连接邮件服务器, 这里认证的邮箱必须与 message 中的发件人邮箱一致, 否则报错</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">//    PS_01: 如果连接服务器失败, 都会在控制台输出相应失败原因的log。</span></span><br><span class="line">    <span class="comment">//    仔细查看失败原因, 有些邮箱服务器会返回错误码或查看错误类型的链接,</span></span><br><span class="line">    <span class="comment">//    根据给出的错误类型到对应邮件服务器的帮助网站上查看具体失败原因。</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    <span class="comment">//    PS_02: 连接失败的原因通常为以下几点, 仔细检查代码:</span></span><br><span class="line">    <span class="comment">//           (1) 邮箱没有开启 SMTP 服务;</span></span><br><span class="line">    <span class="comment">//           (2) 邮箱密码错误, 例如某些邮箱开启了独立密码;</span></span><br><span class="line">    <span class="comment">//           (3) 邮箱服务器要求必须要使用 SSL 安全连接;</span></span><br><span class="line">    <span class="comment">//           (4) 请求过于频繁或其他原因, 被邮件服务器拒绝服务;</span></span><br><span class="line">    <span class="comment">//           (5) 如果以上几点都确定无误, 到邮件服务器网站查找帮助。</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    transport.connect(myEmailAccount, myEmailPassword);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 6. 发送邮件, 发到所有的收件地址, message.getAllRecipients() 获取到的是在创建邮件对象时添加的所有收件人, 抄送人, 密送人</span></span><br><span class="line">    transport.sendMessage(message, message.getAllRecipients());</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 7. 关闭连接</span></span><br><span class="line">    transport.close();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建一封只包含文本的简单邮件</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> session     和服务器交互的会话</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> sendMail    发件人邮箱</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> receiveMail 收件人邮箱</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MimeMessage <span class="title">createMimeMessage</span><span class="params">(Session session, String sendMail, String receiveMail)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    <span class="comment">// 1. 创建一封邮件</span></span><br><span class="line">    MimeMessage message = <span class="keyword">new</span> MimeMessage(session);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 2. From: 发件人</span></span><br><span class="line">    message.setFrom(<span class="keyword">new</span> InternetAddress(sendMail, <span class="string">&quot;昵称&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 3. To: 收件人（可以增加多个收件人、抄送、密送）</span></span><br><span class="line">    message.setRecipient(MimeMessage.RecipientType.TO, <span class="keyword">new</span> InternetAddress(receiveMail, <span class="string">&quot;XX用户&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>));</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 4. Subject: 邮件主题</span></span><br><span class="line">    message.setSubject(<span class="string">&quot;主题&quot;</span>, <span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 5. Content: 邮件正文（可以使用html标签）</span></span><br><span class="line">    message.setContent(<span class="string">&quot;邮件正文&quot;</span>, <span class="string">&quot;text/html;charset=UTF-8&quot;</span>);</span><br><span class="line">        <span class="comment">// 6. 设置发件时间</span></span><br><span class="line">    message.setSentDate(<span class="keyword">new</span> Date());</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 7. 保存设置</span></span><br><span class="line">    message.saveChanges();</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> message;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
@@ -605,7 +516,7 @@ auth_pass 1111</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhx6666.gitee.io/2021/02/20/nginx/">https://zhx6666.gitee.io/2021/02/20/nginx/</a>
+                    <a href="https://zhx6666.gitee.io/2021/02/21/java%E5%8F%91%E9%80%81%E9%82%AE%E7%AE%B1/">https://zhx6666.gitee.io/2021/02/21/java%E5%8F%91%E9%80%81%E9%82%AE%E7%AE%B1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1078,9 +989,10 @@ auth_pass 1111</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/02/21/java%E5%8F%91%E9%80%81%E9%82%AE%E7%AE%B1/">
                     <div class="card-image">
@@ -1098,9 +1010,9 @@ auth_pass 1111</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-21
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1109,6 +1021,7 @@ auth_pass 1111</code></pre>
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1119,13 +1032,13 @@ auth_pass 1111</code></pre>
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/25/springboot%E9%85%8D%E7%BD%AE/">
+                <a href="/2021/02/20/nginx/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="springboot配置">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="nginx">
                         
-                        <span class="card-title">springboot配置</span>
+                        <span class="card-title">nginx</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1136,7 +1049,7 @@ auth_pass 1111</code></pre>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-20
                             </span>
                         <span class="publish-author">
                             
